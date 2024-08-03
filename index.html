@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Guy Levy | My Travel Blog</title>
+	<link rel="icon" type="image/x-icon" href="images/travel.png">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="I'm Guy Levy a QA Junior & a former Flight Attendant. This is my Travel Blog!.">
+	<meta name="author" content="Guy Levy">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">	
+</head>
+
+<body>
+
+	<!-- Sidebar/menu -->
+	<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+	  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+	  <div class="w3-container">
+		<h3 class="w3-padding-64"><b>Travel<br>Blog</b>&nbsp<img class="locator-img" src="images/weather.png" alt="flight"></h3>
+	  </div>
+	  <div class="w3-bar-block">
+		<a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><img class="locator-img" src="images/locationflag.png" alt="locationflag">Home</a> 
+		<a href="#aboutme" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><img class="locator-img" src="images/locationflag.png" alt="locationflag">About Me</a> 
+		<a href="#bangkok" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><img class="locator-img" src="images/locationflag.png" alt="locationflag">Bangkok</a> 
+		<a href="#hongkong" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><img class="locator-img" src="images/locationflag.png" alt="locationflag">Hong Kong</a> 
+		<a href="#london" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><img class="locator-img" src="images/locationflag.png" alt="locationflag">London</a>
+		<a href="#newyork" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><img class="locator-img" src="images/locationflag.png" alt="locationflag">New York</a>
+		<a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"><img class="locator-img" src="images/locationflag.png" alt="locationflag">Contact Me</a>
+	  </div>
+	</nav>
+
+	<!-- Top menu on small screens -->
+	<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+	  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+	  <span>Travel Blog&nbsp<img class="locator-img" src="images/weather.png" alt="flight"></span>
+	</header>
+
+	<!-- Overlay effect when opening sidebar on small screens -->
+	<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+	<!-- !PAGE CONTENT! -->
+	<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+	  <!-- Header -->
+	  <div class="w3-container" style="margin-top:80px">
+		<h1 class="w3-jumbo"><b>Hi, I'm Guy</b>&nbsp<img class="world-and-qatester-icon" src="images/protection.png" alt="QA Tester"></h1>
+		<h1 class="w3-xxxlarge w3-text-red"><b>This is My Travel Blog!</b>&nbsp<img class="world-and-qatester-icon" src="images/travel.png" alt="Travel"></h1>
+		
+		<hr style="width:50px;border:5px solid red" class="w3-round">
+	  </div>
+	  
+	  <!-- Photo grid (modal) -->
+	  <div class="w3-row-padding">
+		<div class="w3-half">
+		  <img src="images/photogrid1.jpg" style="width:95%; box-shadow: 4px 4px 12px gray" onclick="onClick(this)" alt="Bangkok">
+		  <img src="images/photogrid2.jpg" style="width:95%; box-shadow: 4px 4px 12px gray" onclick="onClick(this)" alt="ELAL">
+		  <img src="images/photogrid3.jpg" style="width:95%; box-shadow: 4px 4px 12px gray" onclick="onClick(this)" alt="ELAL">
+		</div>
+
+		<div class="w3-half">
+		  <img src="images/photogrid4.jpg" style="width:95%; box-shadow: 4px 4px 12px gray" onclick="onClick(this)" alt="ELAL">
+		  <img src="images/photogrid5.jpg" style="width:95%; box-shadow: 4px 4px 12px gray" onclick="onClick(this)" alt="ELAL">
+		</div>
+	  </div>
+
+	  <!-- Modal for full size images on click-->
+	  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+		<span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+		<div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+		  <img id="img01" class="w3-image">
+		  <p id="caption"></p>
+		</div>
+	  </div>
+
+	  <!-- About Me text -->
+	  <div class="w3-container" id="aboutme" style="margin-top:75px">
+			<h1 class="w3-xxxlarge w3-text-red"><b>About Me.</b></h1>
+			<hr style="width:50px;border:5px solid red" class="w3-round">
+			<p>Hi, my name is Guy Levy. I am 43 years old QA Junior from Tel Aviv.</p>
+			<p>QA is my biggest passion, but I also love exploring the world.</p> 
+			<p>As a former flight attendant, I was fortunate to explore stunning cities worldwide. I'm excited to introduce you to the cities that have captured my heart. Let's explore together!</p>
+	  </div>
+	  
+	  <!-- Bangkok Introduction -->
+	  <div class="w3-container" id="bangkok" style="margin-top:75px">
+			<h1 class="w3-xxxlarge w3-text-red"><b><img class="city-locator-monument-icon" src="images/location-mark.png" alt="Location Mark">
+			Bangkok.</b><img class="city-locator-monument-icon" src="images/emerald-temple.png" alt="Emerald-Temple"></h1>
+			<hr style="width:50px;border:5px solid red" class="w3-round">
+			<p>The best city in the world!</p>
+			<p>A vibrant, chaotic metropolis where ancient temples stand tall amidst towering skyscrapers. A sensory overload of bustling markets, delicious street food, and friendly smiles. A city that never sleeps, offering endless entertainment and cultural experiences.</p>
+			<p><b>Things I loved doing in Bangkok</b>:</p>
+	  </div>
+
+	  <!-- Bangkok Pictures -->
+	  <div class="w3-row-padding w3-grayscale">
+		<div class="w3-col m4 w3-margin-bottom" style="box-shadow: 4px 4px 12px gray">
+		  <div class="w3-light-grey">
+			<img src="images/bangkok3.png" alt="Boat River Sightseeing in Bangkok" style="width:100%">
+			<div class="w3-container">
+			  <!--<h3>John Doe</h3>-->
+			  <p class="w3-opacity" style="color:red"><img class="locator-img" src="images/locationflag.png" alt="Location Flag">Boat River Sightseeing</p>
+			  <p>Bangkok, the City of Angels, is best experienced from the water. A boat ride along the Chao Phraya River offers a unique perspective of the city that you simply can't get by land. Many popular attractions are located along the river, making it a convenient way to explore the city.</p>
+			</div>
+		  </div>
+		</div>
+		<div class="w3-col m4 w3-margin-bottom" style="box-shadow: 4px 4px 12px gray">
+		  <div class="w3-light-grey">
+			<img src="images/bangkok2.jpg" alt="Motorbiking in Bangkok" style="width:100%">
+			<div class="w3-container">
+			  <p class="w3-opacity" style="color:red"><img class="locator-img" src="images/locationflag.png" alt="Location Flag">Motorbiking in Bangkok</p>
+			  <p>For everyday transportation, the most popular vehicle in Bangkok is the motorcycle. They are practical, efficient, and can navigate the city's traffic with ease. But when you do so, please take into cosiderations traffic congestions, air pollution, safety concerns, and helmet laws.</p>
+			</div>
+		  </div>
+		</div>
+		<div class="w3-col m4 w3-margin-bottom" style="box-shadow: 4px 4px 12px gray">
+		  <div class="w3-light-grey">
+			<img src="images/bangkok1.jpg" alt="MBK Center" style="width:100%">
+			<div class="w3-container">
+			  <p class="w3-opacity" style="color:red"><img class="locator-img" src="images/locationflag.png" alt="Location Flag">MBK Center</p>
+			  <p>MBK Center (formerly Mah Boon Khrong Center) is a massive shopping mall located in the heart of Bangkok. It's one of the oldest and largest shopping centers in the city. MBK Center blew me away! The amazing deals, authentic feel, fantastic food choices, and perfect location made it an unforgettable shopping adventure.</p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+	  <!-- Hong Kong Introduction -->
+	  <div class="w3-container" id="hongkong" style="margin-top:75px">
+			<h1 class="w3-xxxlarge w3-text-red" style=""><b><img class="city-locator-monument-icon" src="images/location-mark.png" alt="Location Mark">
+			Hong Kong.</b><img class="city-locator-monument-icon" src="images/skyline.png" alt="Skyline"></h1>
+			<hr style="width:50px;border:5px solid red" class="w3-round">
+			<p>Hong Kong, a dynamic metropolis, seamlessly blends ancient traditions with modern innovation. Known for its towering skyscrapers, bustling markets, and delicious cuisine,
+  			   Hong Kong offers a unique and unforgettable experience.</p>
+			<p><b>Things I loved doing in Hong Kong</b>:</p>
+	  </div>
+
+	  <!-- Hong Kong Pictures -->
+	  <div class="w3-row-padding w3-grayscale">
+		<div class="w3-col m4 w3-margin-bottom" style="box-shadow: 4px 4px 12px gray">
+		  <div class="w3-light-grey">
+			<img src="images/nightskyline.jpg" alt="Night Skyline in Hong Kong" style="width:100%">
+			<div class="w3-container">
+			  <p class="w3-opacity" style="color:red"><img class="locator-img" src="images/locationflag.png" alt="Location Flag">Star Ferry</p>
+			  <p>A classic way to experience the city's skyline from the harbor. The Star Ferry transported me back in time, offered me a genuine Hong Kong experience, it was so beautiful.</p>
+			</div>
+		  </div>
+		</div>
+		<div class="w3-col m4 w3-margin-bottom" style="box-shadow: 4px 4px 12px gray">
+		  <div class="w3-light-grey">
+			<img src="images/hongkongnightlife.jpg" alt="Lan Kwai Fong" style="width:100%">
+			<div class="w3-container">
+			  <p class="w3-opacity" style="color:red"><img class="locator-img" src="images/locationflag.png" alt="Location Flag">Lan Kwai Fong</p>
+			  <p>It's Hong Kong's lively nightlife district. I discovered a diverse range of bars, clubs, and restaurants to suit every taste and mood. I enjoyed the sounds of local and international musicians performing live.</p>
+			</div>
+		  </div>
+		</div>
+		<div class="w3-col m4 w3-margin-bottom" style="box-shadow: 4px 4px 12px gray">
+		  <div class="w3-light-grey">
+			<img src="images/hongkongfoodmarket.jpg" alt="Food Markets" style="width:100%">
+			<div class="w3-container">
+			  <p class="w3-opacity" style="color:red"><img class="locator-img" src="images/locationflag.png" alt="Location Flag">Street Food Markets</p>
+			  <p>Hong Kong is a food lover's paradise, and its bustling food markets are where the magic happens. These vibrant hubs offer a tantalizing array of local delicacies and international flavors.
+			  There are Wet markets which offer seafood and meat, Cooked food markets, and Night markets.</p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+	  <!-- London Introduction -->
+	  <div class="w3-container" id="london" style="margin-top:75px">
+			<h1 class="w3-xxxlarge w3-text-red"><b><img class="city-locator-monument-icon" src="images/location-mark.png" alt="Location Mark">
+			London.</b><img class="city-locator-monument-icon" src="images/bus.png" alt="Bus">
+			<img class="city-locator-monument-icon" src="images/telephone-booth.png" alt="Telephone Booth"></h1>
+			<hr style="width:50px;border:5px solid red" class="w3-round">
+			<p>London is a vibrant, cosmopolitan city that offers something for everyone. From its rich history and iconic landmarks to its world-class arts and culture scene, 
+			there's always something to discover.</p>
+			<p><b>Things I loved doing in London</b>:</p>
+	  </div>
+
+	  <!-- London Pictures -->
+	  <div class="w3-row-padding w3-grayscale">
+		<div class="w3-col m4 w3-margin-bottom" style="box-shadow: 4px 4px 12px gray">
+		  <div class="w3-light-grey">
+			<img src="images/telephonebooth.jpg" alt="Telephone Booth" style="width:100%">
+			<div class="w3-container">
+			  <p class="w3-opacity" style="color:red"><img class="locator-img" src="images/locationflag.png" alt="Location Flag">London's iconic Telephone Booths</p>
+			  <p>London's iconic red telephone booths are more than just functional structures; they're symbols of the city's rich history and culture. While they might not be as essential for communication as they once were, they remain a beloved part of London's landscape and offer a unique opportunity to connect with the city's past.</p>
+			</div>
+		  </div>
+		</div>
+		<div class="w3-col m4 w3-margin-bottom" style="box-shadow: 4px 4px 12px gray">
+		  <div class="w3-light-grey">
+			<img src="images/redlondonbus.jpg" alt="Red London Bus" style="width:100%">
+			<div class="w3-container">
+			  <p class="w3-opacity" style="color:red"><img class="locator-img" src="images/locationflag.png" alt="Location Flag">Red London Bus</p>
+			  <p>The red London bus is a world-renowned symbol of the city. It's a double-decker bus, meaning it has two levels: the lower deck and the upper deck. 
+			     The distinctive red color has become synonymous with London. The Double-decker design Offers a unique sightseeing experience from the upper deck. 
+				 The ride on the London bus was amazing! I loved seeing the city from the top deck.</p>
+			</div>
+		  </div>
+		</div>
+		<div class="w3-col m4 w3-margin-bottom" style="box-shadow: 4px 4px 12px gray">
+		  <div class="w3-light-grey">
+			<img src="images/thebigben.png" alt="Big Ben" style="width:100%">
+			<div class="w3-container">
+			  <p class="w3-opacity" style="color:red"><img class="locator-img" src="images/locationflag.png" alt="Location Flag">Big Ben</p>
+			  <p>Big Ben is one of the most recognizable symbols of London and the United Kingdom. Big Ben is actually the nickname for the Great Bell within the clock tower
+  			     at the north end of the Palace of Westminster in London.The tower itself is officially called Elizabeth Tower.</p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+	  <!-- NY Introduction -->
+	  <div class="w3-container" id="newyork" style="margin-top:75px">
+			<h1 class="w3-xxxlarge w3-text-red" style=""><b><img class="city-locator-monument-icon" src="images/location-mark.png" alt="Location Mark">
+			New York.</b><img class="city-locator-monument-icon" src="images/liberty.png" alt="Statue Of Liberty"></h1>
+			<hr style="width:50px;border:5px solid red" class="w3-round">
+			<p>New York City is a global icon, pulsating with energy and offering an unparalleled experience. 
+			From the Empire State Building and the Statue of Liberty to Central Park and Times Square, the city is packed with world-famous sights.</p>
+			<p><b>Things I loved doing in New York</b>:</p>
+	  </div>
+
+	  <!-- NY Pictures -->
+	  <div class="w3-row-padding w3-grayscale">
+		<div class="w3-col m4 w3-margin-bottom" style="box-shadow: 4px 4px 12px gray">
+		  <div class="w3-light-grey">
+			<img src="images/centralpark.jpg" alt="Central Park" style="width:100%">
+			<div class="w3-container">
+			  <p class="w3-opacity" style="color:red"><img class="locator-img" src="images/locationflag.png" alt="Location Flag">Central Park</p>
+			  <p>Central Park is a sprawling urban oasis located in the heart of Manhattan, New York City. It's one of the most famous parks in the world 
+			  and a beloved destination for locals and tourists alike. Jogging in Central Park was amazing!</p>
+			</div>
+		  </div>
+		</div>
+		<div class="w3-col m4 w3-margin-bottom" style="box-shadow: 4px 4px 12px gray">
+		  <div class="w3-light-grey">
+			<img src="images/manhattanbridge.jpg" alt="Manhattan Bridge" style="width:100%">
+			<div class="w3-container">
+			  <p class="w3-opacity" style="color:red"><img class="locator-img" src="images/locationflag.png" alt="Location Flag">Manhattan Bridge</p>
+			  <p>The Manhattan Bridge is a suspension bridge that spans the East River, connecting Lower Manhattan with Downtown Brooklyn.
+			  It's one of the four major bridges linking the two boroughs, and it's known for its impressive architecture and stunning views.</p>
+			</div>
+		  </div>
+		</div>
+		<div class="w3-col m4 w3-margin-bottom" style="box-shadow: 4px 4px 12px gray">
+		  <div class="w3-light-grey">
+			<img src="images/timessquare.jpg" alt="Times Square" style="width:100%">
+			<div class="w3-container">
+			  <p class="w3-opacity" style="color:red"><img class="locator-img" src="images/locationflag.png" alt="Location Flag">Times Square</p>
+			  <p>Times Square is a major commercial intersection, tourist destination, entertainment center, and neighborhood in the Midtown Manhattan
+			  section of New York City. It is best known for its bright lights, large electronic billboards, and crowds of pedestrians. 
+			  I had the pleasure to experience the world-famous ball drop and join millions in celebrating the start of a new year!</p>
+			</div>
+		  </div>
+		</div>
+	  </div>
+		
+	  <!-- NY videos -->
+	  <div class="w3-row-padding">
+	  
+		<div class="w3-half w3-margin-bottom">
+		  <ul class="w3-ul w3-light-grey w3-center" style="box-shadow: 4px 4px 12px gray">
+			<div class="w3-light-grey">
+				<div class="w3-container">
+					<p><b>NY Times Square - Welcoming 2010!</b><br>
+						<img class="locator-img" src="images/video-camera.png" alt="locationflag">
+						<img class="icons-no-shadow" src="images/confetti.png" alt="confetti">
+						<img class="icons-no-shadow" src="images/happy-new-year.png" alt="happy-new-year">
+						<img class="icons-no-shadow" src="images/fireworks.png" alt="fireworks">
+						<br><br>
+						<video width="320" height="240" controls>
+							<source src="images/1302955_10151819197123545_13009_n.mp4" type="video/mp4">
+							<source src="images/1302955_10151819197123545_13009_n.mp4" type="video/ogg">
+							Your browser does not support the video tag.
+						</video>					
+					</p>
+				</div>
+		    </div>
+		  </ul>
+		</div>
+		
+			
+		<div class="w3-half w3-margin-bottom">
+		  <ul class="w3-ul w3-light-grey w3-center" style="box-shadow: 4px 4px 12px gray">
+			<div class="w3-light-grey">
+				<div class="w3-container">
+					<p><b>NY Times Square - Welcoming 2010!</b><br>
+						<img class="locator-img" src="images/video-camera.png" alt="locationflag">
+						<img class="icons-no-shadow" src="images/confetti.png" alt="confetti">
+						<img class="icons-no-shadow" src="images/happy-new-year.png" alt="happy-new-year">
+						<img class="icons-no-shadow" src="images/fireworks.png" alt="fireworks">
+						<br><br>
+						<video width="320" height="240" controls>
+							<source src="images/1193512_10151795241173545_25652_n.mp4" type="video/mp4">
+							<source src="images/1193512_10151795241173545_25652_n.mp4" type="video/ogg">
+							Your browser does not support the video tag.
+						</video>					
+					</p>
+				</div>
+		    </div>
+		  </ul>
+		</div>
+		
+	  </div>
+	  
+	  <!-- Contact -->
+		  <div class="w3-container" id="contact" style="margin-top:75px">
+			<h1 class="w3-xxxlarge w3-text-red"><b>Contact Me.</b></h1>
+			<hr style="width:50px;border:5px solid red" class="w3-round">
+			<p style="font-size:20px">I'd love to hear your thoughts on my Travel Blog!</p>
+			<form action="https://formsubmit.co/b3483e6ce1d71b5ddad411b915600b96" method="POST" target="_blank">
+				  <div class="w3-section">
+					<label>Name</label>
+					<input class="w3-input w3-border" type="text" name="Name" placeholder="Full Name" required>
+				  </div>
+				  <div class="w3-section">
+					<label>Email</label>
+					<input class="w3-input w3-border" type="text" name="Email" placeholder="Email" required>
+				  </div>
+				  <div class="w3-section">
+					<label>Message</label>
+					<textarea class="w3-input w3-border" type="text" name="Message" placeholder="Message" required></textarea>
+				  </div>
+				  <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
+			</form>  
+		  </div>
+		  
+		<br><hr>
+		<p style="text-align:center">© Guy Levy 2024 - All rights reserved.</p>
+
+	<!-- Container -->
+	<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
+		<p class="w3-right" style="font-size:8px">
+			Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a>
+			<br><a href="https://www.flaticon.com/free-icons/globe" title="globe icons">Globe icons created by Freepik - Flaticon</a>
+		</p>
+	</div>
+
+	<script>
+	// Script to open and close sidebar
+	function w3_open() {
+	  document.getElementById("mySidebar").style.display = "block";
+	  document.getElementById("myOverlay").style.display = "block";
+	}
+	 
+	function w3_close() {
+	  document.getElementById("mySidebar").style.display = "none";
+	  document.getElementById("myOverlay").style.display = "none";
+	}
+
+	// Modal Image Gallery
+	function onClick(element) {
+	  document.getElementById("img01").src = element.src;
+	  document.getElementById("modal01").style.display = "block";
+	  var captionText = document.getElementById("caption");
+	  captionText.innerHTML = element.alt;
+	}
+	</script>
+
+</body>
+</html>
